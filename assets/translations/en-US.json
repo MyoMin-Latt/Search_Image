@@ -1,3 +1,13 @@
 {
-    "Home" : "Home"
+    "home" : "Home",
+    "setting" : "Settings",
+    "search_image" : "Search Images by Pixabay",
+    "enter_name" : "Enter Name",
+    "search" : " Search",
+    "night_mode" : "Night Mode",
+    "download_image" : "Download Image",
+    "language" : "Language",
+    "choose_language" : "Choose Language",
+    "english" : "English",
+    "myanmar" : "Myanmar"
 }

@@ -25,21 +25,21 @@ class ResultWidget extends StatelessWidget {
             children: [
               Column(
                 children: [
-                  Icon(Icons.thumb_up, color: Colors.blue,),
+                  Icon(Icons.thumb_up, color: Theme.of(context).primaryColor,),
                   Text(hits.likes.toString(), style: TextStyle(fontWeight: FontWeight.bold),),                  
                 ],
               ),
 
               Column(
                 children: [
-                  Icon(Icons.remove_red_eye, color: Colors.blue,),
+                  Icon(Icons.remove_red_eye, color: Theme.of(context).primaryColor,),
                   Text(hits.views.toString(), style: TextStyle(fontWeight: FontWeight.bold),),                  
                 ],
               ),
 
               Column(
                 children: [
-                  Icon(Icons.download, color: Colors.blue,),
+                  Icon(Icons.download, color: Theme.of(context).primaryColor,),
                   Text(hits.downloads.toString(), style: TextStyle(fontWeight: FontWeight.bold),),                  
                 ],
               ),

@@ -27,8 +27,8 @@ class _HomePageState extends State<HomePage> {
           print(botCurIndex);
         },
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.home), label: tr("Home")),
-          BottomNavigationBarItem(icon: Icon(Icons.settings), label: 'Settings'),
+          BottomNavigationBarItem(icon: Icon(Icons.home), label: tr('home')),
+          BottomNavigationBarItem(icon: Icon(Icons.settings), label: tr('setting')),
         ]
       ),
     );

@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
 import 'package:search_image_p1/language/language_page.dart';
@@ -28,7 +29,7 @@ class _SettingsPageState extends State<SettingsPage> {
             builder: (context, ThemeProvider themeProvider, child ){
               return ListTile(
               leading: Icon(Icons.brightness_2),
-              title: Text(themeProvider.themeM == ThemeMode.light? 'Dark Mode': 'Light Mode'),
+              title: Text(tr('night_mode')),
               trailing: Switch(
                     value: themeProvider.themeM != ThemeMode.light, 
                     onChanged: (change){
@@ -49,11 +50,11 @@ class _SettingsPageState extends State<SettingsPage> {
           ),
           ListTile(
             leading: Icon(Icons.photo),
-            title: Text('Download Image'),
+            title: Text(tr('download_image')),
           ),
           ListTile(
             leading: Icon(Icons.language),
-            title: Text('Language'),
+            title: Text(tr('language')),
             onTap: (){
               Navigator.of(context).push(
                 MaterialPageRoute(

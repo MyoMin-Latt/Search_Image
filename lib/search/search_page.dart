@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:search_image_p1/result/result_page.dart';
 
@@ -15,10 +16,7 @@ class _SearchPageState extends State<SearchPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Search Images by Pixabay'),
-        actions: [
-          Text(DateTime.now().toString())
-        ],
+        title: Text(tr('search_image')),        
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -29,7 +27,7 @@ class _SearchPageState extends State<SearchPage> {
               controller: _searchTextEC,
               decoration: InputDecoration(
                 contentPadding: EdgeInsets.all(10),
-                label: Text('Enter name'),
+                label: Text(tr('enter_name')),
                 border: OutlineInputBorder(
                   borderSide: BorderSide(),
                   borderRadius: BorderRadius.circular(10),
@@ -44,7 +42,7 @@ class _SearchPageState extends State<SearchPage> {
                   })
                 );
               }, 
-              child: const Text('Serach')
+              child: Text(tr('search'))
             )
           ],
         ),
