@@ -62,7 +62,11 @@ class _SettingsPageState extends State<SettingsPage> {
                     return LanguagePage();
                   }
                 )
-              );
+              ).then((value) {
+                setState(() {
+                  
+                });
+              });
             },
           )
         ],

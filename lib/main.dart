@@ -36,11 +36,13 @@ class MyApp extends StatelessWidget {
             theme: ThemeData(              
               brightness: Brightness.light,
               primaryColor: Colors.green,
-              primarySwatch: Colors.green,              
+              primarySwatch: Colors.green, 
+              fontFamily: 'pyidaungsu'     
             ),
             darkTheme: ThemeData(
               brightness: Brightness.dark,
               primarySwatch: Colors.grey,
+              fontFamily: 'pyidaungsu',
               bottomNavigationBarTheme: BottomNavigationBarThemeData(
                 selectedItemColor: Colors.white
               )
