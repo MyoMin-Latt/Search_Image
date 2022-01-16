@@ -1,6 +1,7 @@
 import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:search_image_p1/download_image/download_image_page.dart';
 import 'package:search_image_p1/language/language_page.dart';
 import 'package:search_image_p1/theme/theme_provider.dart';
 
@@ -51,6 +52,15 @@ class _SettingsPageState extends State<SettingsPage> {
           ListTile(
             leading: Icon(Icons.photo),
             title: Text(tr('download_image')),
+            onTap: (){
+              Navigator.of(context).push(
+                MaterialPageRoute(
+                  builder: (context){
+                    return DownloadImagePage();
+                  }
+                )
+              );
+            },
           ),
           ListTile(
             leading: Icon(Icons.language),

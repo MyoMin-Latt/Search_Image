@@ -112,8 +112,8 @@ class _ImageDetailPageState extends State<ImageDetailPage> {
     });
     Directory? directory;
     directory = await getExternalStorageDirectory();
-    String path =
-        directory!.path + '/Images/' + DateTime.now().microsecond.toString();
+    // String path = directory!.path + '/Images/' + DateTime.now().microsecond.toString()+basename(widget.hits.largeImageURL);
+    String path = directory!.path + '/Images/' + widget.hits.largeImageURL!.split('/').last;
     await Dio().download(widget.hits.largeImageURL!, path,
         onReceiveProgress: (receive, total) {
       double percent = receive / total * 100;
@@ -123,7 +123,8 @@ class _ImageDetailPageState extends State<ImageDetailPage> {
       });
       if(percent == 100){
         setState(() {
-          isDownloading = true;          
+          isDownloading = true;
+          count = '0';     
         });
         ScaffoldMessenger.of(context).showSnackBar(
           SnackBar(content: Text('Download is successful'),)
