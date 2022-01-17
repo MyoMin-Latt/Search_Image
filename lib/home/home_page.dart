@@ -24,7 +24,7 @@ class _HomePageState extends State<HomePage> {
           setState(() {
             botCurIndex = clickIndex;
           });
-          print(botCurIndex);
+          // print(botCurIndex);
         },
         items: [
           BottomNavigationBarItem(icon: Icon(Icons.home), label: tr('home')),

@@ -12,20 +12,23 @@ void main()async{
       supportedLocales: [Locale('en', 'US'), Locale('my', 'MM')],
       path: 'assets/translations', // <-- change the path of the translation files 
       fallbackLocale: Locale('en', 'US'),
-      child: MyApp()
+      saveLocale: true, 
+      child: ChangeNotifierProvider<ThemeProvider>(
+      create: (BuildContext context){
+        return ThemeProvider();
+      },
+      child: ForThemeData()
+    ),
     ),);
 }
 
-class MyApp extends StatelessWidget {
-  const MyApp({ Key? key }) : super(key: key);
-  
+class ForThemeData extends StatelessWidget {
+  const ForThemeData({ Key? key }) : super(key: key);
   @override
   Widget build(BuildContext context) {
-    return ChangeNotifierProvider<ThemeProvider>(
-      create: (BuildContext context){
-        return ThemeProvider();
-      },      
-      child:Consumer<ThemeProvider>(
+    ThemeProvider provider = Provider.of<ThemeProvider>(context);
+    provider.checkTheme();
+    return Consumer<ThemeProvider>(
         builder: (context, ThemeProvider themeProvider, child ) {
           return MaterialApp(
             localizationsDelegates: context.localizationDelegates,
@@ -50,8 +53,7 @@ class MyApp extends StatelessWidget {
             ),
           );
         }
-      ),
-    );
+      );
   }
 }
 

@@ -16,14 +16,18 @@ class DownloadImageBloc{
     Directory? directory;
     directory = await getExternalStorageDirectory();
     Directory path = Directory(directory!.path+'/Images/');
-    path.list().forEach((element) {
-      print(element);
-    });
+    // path.list().forEach((element) {
+    //   print(element);
+    // });
     List<FileSystemEntity> downloadImageList = path.listSync();
     responseOb.msgState = MsgState.data;
     responseOb.data = downloadImageList;
     streamControllerImage.sink.add(responseOb);
 
+  }
+  delete(FileSystemEntity file){
+    file.delete();
+    getDownloadImage();
   }
 
   dispose(){

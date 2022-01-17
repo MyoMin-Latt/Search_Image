@@ -19,7 +19,7 @@ class _SettingsPageState extends State<SettingsPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('Settings'),
+        title: Text(tr('setting')),
         actions: [
           Text(DateTime.now().toString())
         ],
@@ -84,3 +84,6 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 }
+
+
+

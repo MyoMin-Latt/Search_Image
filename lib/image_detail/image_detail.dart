@@ -117,7 +117,7 @@ class _ImageDetailPageState extends State<ImageDetailPage> {
     await Dio().download(widget.hits.largeImageURL!, path,
         onReceiveProgress: (receive, total) {
       double percent = receive / total * 100;
-      print(percent.toStringAsFixed(0));
+      // print(percent.toStringAsFixed(0));
       setState(() {
         count = percent.toStringAsFixed(0);
       });
