@@ -36,7 +36,7 @@ class _DownloadImagePageState extends State<DownloadImagePage> {
             return ListView.builder(
               itemCount: downloadImageList.length,
               itemBuilder: (BuildContext context, int index){
-                print(downloadImageList[index]);
+                // print(downloadImageList[index]);
                 return Stack(
                   children: [
                     Card(
