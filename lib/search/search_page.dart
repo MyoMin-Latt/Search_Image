@@ -3,20 +3,26 @@ import 'package:flutter/material.dart';
 import 'package:search_image_p1/result/result_page.dart';
 
 class SearchPage extends StatefulWidget {
-  const SearchPage({ Key? key }) : super(key: key);
+  const SearchPage({Key? key}) : super(key: key);
 
   @override
   _SearchPageState createState() => _SearchPageState();
 }
 
 class _SearchPageState extends State<SearchPage> {
-  
   TextEditingController _searchTextEC = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text(tr('search_image')),        
+        title: Text(tr('search_image')),
+        actions: [
+          Center(
+              child: Text(
+            DateFormat('d/ MM/ yyyy').format(DateTime.now()),
+            style: TextStyle(fontSize: 17),
+          ))
+        ],
       ),
       body: Padding(
         padding: const EdgeInsets.all(8.0),
@@ -26,24 +32,21 @@ class _SearchPageState extends State<SearchPage> {
             TextField(
               controller: _searchTextEC,
               decoration: InputDecoration(
-                contentPadding: EdgeInsets.all(10),
-                label: Text(tr('enter_name')),
-                border: OutlineInputBorder(
-                  borderSide: BorderSide(),
-                  borderRadius: BorderRadius.circular(10),
-                )
-              ),
+                  contentPadding: EdgeInsets.all(10),
+                  label: Text(tr('enter_name')),
+                  border: OutlineInputBorder(
+                    borderSide: BorderSide(),
+                    borderRadius: BorderRadius.circular(10),
+                  )),
             ),
             ElevatedButton(
-              onPressed: (){
-                Navigator.of(context).push(
-                  MaterialPageRoute(builder: (context){
+                onPressed: () {
+                  Navigator.of(context)
+                      .push(MaterialPageRoute(builder: (context) {
                     return ResultPage(_searchTextEC.text);
-                  })
-                );
-              }, 
-              child: Text(tr('search'))
-            )
+                  }));
+                },
+                child: Text(tr('search')))
           ],
         ),
       ),

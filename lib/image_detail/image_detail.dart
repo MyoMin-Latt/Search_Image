@@ -127,7 +127,10 @@ class _ImageDetailPageState extends State<ImageDetailPage> {
           count = '0';     
         });
         ScaffoldMessenger.of(context).showSnackBar(
-          SnackBar(content: Text('Download is successful'),)
+          SnackBar(
+            backgroundColor: Theme.of(context).primaryColor,
+            action: SnackBarAction(textColor: Colors.white, label: 'Ok', onPressed: (){}),
+            content: Text('Download is successful'),)
         );
       }
       

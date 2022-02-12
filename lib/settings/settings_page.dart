@@ -20,9 +20,7 @@ class _SettingsPageState extends State<SettingsPage> {
     return Scaffold(
       appBar: AppBar(
         title: Text(tr('setting')),
-        actions: [
-          Text(DateTime.now().toString())
-        ],
+        
       ),
       body: Column(
         children: [

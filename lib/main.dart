@@ -31,6 +31,7 @@ class ForThemeData extends StatelessWidget {
     return Consumer<ThemeProvider>(
         builder: (context, ThemeProvider themeProvider, child ) {
           return MaterialApp(
+            debugShowCheckedModeBanner: false,
             localizationsDelegates: context.localizationDelegates,
             supportedLocales: context.supportedLocales,
             locale: context.locale,
