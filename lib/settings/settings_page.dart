@@ -6,74 +6,57 @@ import 'package:search_image_p1/language/language_page.dart';
 import 'package:search_image_p1/theme/theme_provider.dart';
 
 class SettingsPage extends StatefulWidget {
-  const SettingsPage({ Key? key }) : super(key: key);
+  const SettingsPage({Key? key}) : super(key: key);
 
   @override
   _SettingsPageState createState() => _SettingsPageState();
 }
 
 class _SettingsPageState extends State<SettingsPage> {
-
   bool sw = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text(tr('setting')),
-        
       ),
       body: Column(
         children: [
-          Consumer(
-            builder: (context, ThemeProvider themeProvider, child ){
-              return ListTile(
-              leading: Icon(Icons.brightness_2),
+          Consumer(builder: (context, ThemeProvider themeProvider, child) {
+            return ListTile(
+              leading: const Icon(Icons.brightness_2),
               title: Text(tr('night_mode')),
               trailing: Switch(
-                    value: themeProvider.themeM != ThemeMode.light, 
-                    onChanged: (change){
-                      if(change){
-                        themeProvider.changeToDark();
-                        // print(change);
-                      }
-                      else{
-                        themeProvider.changeToLight();
-                        // print(change);
-                      } 
+                  value: themeProvider.themeM != ThemeMode.light,
+                  onChanged: (change) {
+                    if (change) {
+                      themeProvider.changeToDark();
+                      // print(change);
+                    } else {
+                      themeProvider.changeToLight();
+                      // print(change);
                     }
-                  ), 
-          
+                  }),
             );
-            }
-             
-          ),
+          }),
           ListTile(
-            leading: Icon(Icons.photo),
+            leading: const Icon(Icons.photo),
             title: Text(tr('download_image')),
-            onTap: (){
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (context){
-                    return DownloadImagePage();
-                  }
-                )
-              );
+            onTap: () {
+              Navigator.of(context).push(MaterialPageRoute(builder: (context) {
+                return const DownloadImagePage();
+              }));
             },
           ),
           ListTile(
-            leading: Icon(Icons.language),
+            leading: const Icon(Icons.language),
             title: Text(tr('language')),
-            onTap: (){
-              Navigator.of(context).push(
-                MaterialPageRoute(
-                  builder: (BuildContext context){
-                    return LanguagePage();
-                  }
-                )
-              ).then((value) {
-                setState(() {
-                  
-                });
+            onTap: () {
+              Navigator.of(context)
+                  .push(MaterialPageRoute(builder: (BuildContext context) {
+                return const LanguagePage();
+              })).then((value) {
+                setState(() {});
               });
             },
           )
@@ -82,6 +65,3 @@ class _SettingsPageState extends State<SettingsPage> {
     );
   }
 }
-
-
-

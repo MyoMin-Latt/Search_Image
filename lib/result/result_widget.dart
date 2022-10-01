@@ -14,7 +14,7 @@ class ResultWidget extends StatelessWidget {
         onTap: () {
           Navigator.of(context)
               .push(MaterialPageRoute(builder: (BuildContext context) {
-            return ImageDetailPage(hits);
+            return ImageDetailPage(hits: hits);
           }));
         },
         child: Column(
@@ -28,10 +28,8 @@ class ResultWidget extends StatelessWidget {
                   Center(
                       child: CircularProgressIndicator(
                           value: downloadProgress.progress)),
-              errorWidget: (context, url, error) => Icon(Icons.error),
+              errorWidget: (context, url, error) => const Icon(Icons.error),
             ),
-
-
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
@@ -56,7 +54,7 @@ class ResultWidget extends StatelessWidget {
                     ),
                     Text(
                       hits.likes.toString(),
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -68,7 +66,7 @@ class ResultWidget extends StatelessWidget {
                     ),
                     Text(
                       hits.views.toString(),
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),
@@ -80,7 +78,7 @@ class ResultWidget extends StatelessWidget {
                     ),
                     Text(
                       hits.downloads.toString(),
-                      style: TextStyle(fontWeight: FontWeight.bold),
+                      style: const TextStyle(fontWeight: FontWeight.bold),
                     ),
                   ],
                 ),

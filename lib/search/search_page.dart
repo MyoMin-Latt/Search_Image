@@ -10,7 +10,7 @@ class SearchPage extends StatefulWidget {
 }
 
 class _SearchPageState extends State<SearchPage> {
-  TextEditingController _searchTextEC = TextEditingController();
+  final TextEditingController _searchTextEC = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -20,7 +20,7 @@ class _SearchPageState extends State<SearchPage> {
           Center(
               child: Text(
             DateFormat('d/ MM/ yyyy').format(DateTime.now()),
-            style: TextStyle(fontSize: 17),
+            style: const TextStyle(fontSize: 17),
           ))
         ],
       ),
@@ -32,10 +32,10 @@ class _SearchPageState extends State<SearchPage> {
             TextField(
               controller: _searchTextEC,
               decoration: InputDecoration(
-                  contentPadding: EdgeInsets.all(10),
+                  contentPadding: const EdgeInsets.all(10),
                   label: Text(tr('enter_name')),
                   border: OutlineInputBorder(
-                    borderSide: BorderSide(),
+                    borderSide: const BorderSide(),
                     borderRadius: BorderRadius.circular(10),
                   )),
             ),
