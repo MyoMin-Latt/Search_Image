@@ -1,4 +1,5 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
+import 'dart:developer';
 import 'dart:io';
 
 import 'package:cached_network_image/cached_network_image.dart';
@@ -113,6 +114,7 @@ class _ImageDetailPageState extends State<ImageDetailPage> {
   bool isDownloading = true;
   String count = '0';
   void downLoadImage() async {
+    log('Image URL Link : ${widget.hits.largeImageURL.toString()}');
     setState(() {
       isDownloading = false;
     });

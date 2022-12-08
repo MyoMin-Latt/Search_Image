@@ -34,12 +34,12 @@ class ResultBloc {
         pageNum.toString()));
     if (response.statusCode == 200) {
       /// check response data from api
-      log('Response Data => \n ${response.body}');
+      // log('Response Data => \n ${response.body}');
       Map<String, dynamic> map = jsonDecode(response.body);
 
       /// To Change Json to Model [ResultOb]
       ResultOb resultOb = ResultOb.fromJson(map);
-      log('Response Data Json to Model => \n ${response.body}');
+      // log('Response Data Json to Model => \n ${response.body}');
       responseOb.msgState = MsgState.data;
       responseOb.data = resultOb;
       responseOb.pageState = PageState.first;
@@ -83,7 +83,7 @@ class ResultBloc {
 
       /// To Change Json to Model [ResultOb]
       ResultOb resultOb = ResultOb.fromJson(map);
-      log('Response Data Json to Model => \n ${response.body}');
+      // log('Response Data Json to Model => \n ${response.body}');
       responseOb.msgState = MsgState.data;
       responseOb.data = resultOb;
       responseOb.pageState = PageState.more;
